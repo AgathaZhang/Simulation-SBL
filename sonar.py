@@ -62,7 +62,7 @@ class Sonar:
     _channel_data_queue = []  # 声道数据队列
     _channel_res_queue = queue.Queue(maxsize=1024)  # 声道数据计算结果队列
     _frames = []  # 保存音频文件缓冲流
-    _auto_step_chunk = 0  # 自动步进
+         = 0  # 自动步进
     _bit_width = 20  # GPS数据的位宽
     _min_step = 9600  # 0.05*192000
     _refer_step = 19200  # 0.1*192000
