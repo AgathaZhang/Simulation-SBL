@@ -1,3 +1,4 @@
+# -----------------------------------------------  冗余算法本体
 import numpy as np
 import numpy.random as rd
 import pandas as pd
@@ -116,6 +117,11 @@ class redundancy:
 
 
         return [X_3, Y_3, X_bar, Y_bar]  # 循环应该放在reduncy那一层，这里只返回每一次的
+
+
+
+
+
 # # ----------------------------------------------------------------------------------------------------------
 # #         X_bar = None if P12[0] is None or P13[0] is None or P23[0] is None\
 # #                 else (P12[0] + P13[0] + P23[0]) / 3.0  # 找出三个点求平均 None if 和  is None or 复习
