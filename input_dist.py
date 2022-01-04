@@ -1,3 +1,4 @@
+# -----------------------------------------------  规范定义关于数据输入的一系列函数
 import numpy as np
 import numpy.random as rd
 import pandas as pd
