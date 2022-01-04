@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 class Draw:
-    __i = 5
+    # __i = 5
 
     def __init__(self):
         self.X_re = []
@@ -11,12 +11,14 @@ class Draw:
         self.X_bar = []
         self.Y_bar = []
 
-    def draw(self,X,Y,X_bar, Y_bar):
+    def save(self,X,Y,X_bar, Y_bar):
         plt.clf()                                # 清空画布上的所有内容
         self.X_re.append(X)                  # 模拟数据增量流入，保存历史数据
         self.Y_re.append(Y)                  # 模拟数据增量流入，保存历史数据
         self.X_bar.append(X_bar)
         self.Y_bar.append(Y_bar)
+
+    def draw(self):
         plt.plot(self.X_re, self.Y_re, '.b')
         plt.plot(self.X_bar, self.Y_bar, '.r')
         plt.plot
