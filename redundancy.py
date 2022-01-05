@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import two_circle
 import three_circle
 
-# ------------------------------------------------------------------------------------- 移动至文件 input_dist.py
+# ------------------------------------------------------------------------------------- 移动至文件 input_df.py
 
     # input_df = pd.read_csv("F:\Project\Redundancy\Redundancy_pycode\Fix1523-1549.csv",index_col=0)
     # input_df["Time"] = [x for x in input_df.index]
@@ -25,7 +25,7 @@ import three_circle
     #                           columns=["X_3", "Y_3", "X_bar", "Y_bar",
     #                                    "d1", "d2", "d3", "P12_X", "P12_Y", "P13_X", "P13_Y", "P23_X", "P23_Y"])
 
-# ------------------------------------------------------------------------------------- 移动至文件 input_dist.py
+# ------------------------------------------------------------------------------------- 移动至文件 input_df.py
 
 
 class redundancy:
@@ -104,8 +104,10 @@ class redundancy:
             X_bar = sum_X / (3 - zero)
             Y_bar = sum_Y / (3 - zero)
         except ZeroDivisionError:
-            X_bar = None
-            Y_bar = None
+            X_bar = 0
+            Y_bar = 0
+            # X_bar = None
+            # Y_bar = None
             # list wujie 待调研
             # 三个都不存在的情况 待coding
 
@@ -114,9 +116,13 @@ class redundancy:
         #     sum_pointadd = sum_pointadd + output_point[temp]
         # pd.DataFrame[i] = pd.Series(index)
         #.unique().shape[0] == 3
+        if abs(X_3) > 200:X_3 = 0
+        if abs(Y_3) > 200: Y_3 = 0
+        if abs(X_bar) > 200: X_bar = 0
+        if abs(Y_bar) > 200: Y_bar = 0
+        lists = [X_3, Y_3, X_bar, Y_bar]
 
-
-        return [X_3, Y_3, X_bar, Y_bar]  # 循环应该放在reduncy那一层，这里只返回每一次的
+        return lists  # 循环应该放在reduncy那一层，这里只返回每一次的
 
 
 
